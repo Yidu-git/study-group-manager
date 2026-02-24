@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import FirstPlaceAnim from "../assets/Ranking_icons/First_place_anim.lottie";
+import FirstPlaceAnim from "../assets/Ranking_icons/First_place_animation.lottie";
 
 // Placement icons
 // import FirstPlace from "../assets/Ranking_icons/First.svg?react";
