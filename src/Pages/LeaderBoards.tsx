@@ -26,7 +26,7 @@ const LeaderBoards = () => {
   };
 
   const placeShadows: Record<number, string> = {
-    1: "mb-2 py-1! border-[#fbbf24] shadow-[0_10px_5px_0px_#fbbf2435]",
+    1: "mb-2 py-3! border-[#fbbf24] shadow-[0_10px_5px_0px_#fbbf2435]",
     2: "mb-1 border-[#52525b] shadow-[0_10px_5px_0px_#52525b30]",
     3: "border-[#B87333] shadow-[0_10px_5px_0px_#B8733320]",
   };
@@ -34,17 +34,19 @@ const LeaderBoards = () => {
   const placeIcons: Record<number, any> = {
     // 1: <FirstPlace className="h-10 w-10" />,
     1: (
-      <DotLottieReact
-        dotLottieRefCallback={(instance) => {
-          lottieRef.current = instance;
-        }}
-        onClick={() => lottieRef.current?.play()}
-        src={FirstPlaceAnim}
-        autoplay
-        loop={false}
-        className="h-15 w-15"
-        // style={{ width: 10, height: 10 }}
-      />
+      <div className="relative flex h-10 w-10 items-center justify-center">
+        <DotLottieReact
+          dotLottieRefCallback={(instance) => {
+            lottieRef.current = instance;
+          }}
+          onClick={() => lottieRef.current?.play()}
+          src={FirstPlaceAnim}
+          autoplay
+          loop={false}
+          className="absolute h-18 w-18"
+          // style={{ width: 10, height: 10 }}
+        />
+      </div>
     ),
     2: <SecondPlace className="h-10 w-10" />,
     3: <ThirdPlace className="h-10 w-10" />,
