@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 const Dashboard = () => {
   const [points, setPoints] = useState<Record<string, number>>({
-    Yididiya: 12,
-    Joed: 12,
+    Yididiya: 13,
+    Joed: 13,
     Eyo: 1,
     Noah: 7,
     Steve: 8,
