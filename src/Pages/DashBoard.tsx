@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const Dashboard = () => {
   const [points, setPoints] = useState<Record<string, number>>({
     Yididiya: 13,
-    Joed: 13,
+    Joed: 15,
     Eyo: 1,
     Noah: 7,
     Steve: 8,
