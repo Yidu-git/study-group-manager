@@ -25,5 +25,5 @@ export default defineConfig({
     ],
   },
   assetsInclude: ["**/*.lottie"],
-  base: "/study-group-manager",
+  base: "/study-group-manager/",
 });
