@@ -23,7 +23,7 @@ const Sidebar = ({ openState }: { openState: any }) => {
   const [currentPage, setCurrentPage] = useState("");
 
   //  border-3 border-gray-400
-  const iconSize = "2.5rem";
+  const iconSize = "full";
   const iconStyle = "";
   const links = [
     {
@@ -68,9 +68,11 @@ const Sidebar = ({ openState }: { openState: any }) => {
     },
   ];
 
+  setCurrentPage(window.location.pathname.split("/")[1]);
   useEffect(() => {
+    setCurrentPage(window.location.href.split("/")[5]);
+    console.log(window.location.href.split("/")[5]);
     // console.log(currentPage);
-    setCurrentPage(window.location.pathname.split("/")[1]);
   }, []);
 
   return (
@@ -91,6 +93,7 @@ const Sidebar = ({ openState }: { openState: any }) => {
         <div>
           {links.map((link) => (
             <Link
+              key={link.link}
               to={link.path}
               onClick={() => setCurrentPage(link.path.split("/")[1])}
               className={`flex flex-row items-center gap-2 rounded-lg px-2 py-1 text-xl font-semibold ${link.path.split("/")[1] === currentPage ? "bg-blue-400 text-white hover:bg-blue-500 hover:text-white" : "text-neutral-500 hover:border hover:text-black"}`}

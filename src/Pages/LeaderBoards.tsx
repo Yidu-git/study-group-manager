@@ -14,7 +14,7 @@ const LeaderBoards = () => {
   const [points, setPoints] = useState<Record<string, number>>({
     Yididiya: 13,
     Joed: 15,
-    Eyo: 1,
+    Eyo: 21,
     Noah: 7,
     Steve: 8,
   });
@@ -67,6 +67,7 @@ const LeaderBoards = () => {
       <div className="flex h-full w-full flex-col gap-2 overflow-x-auto bg-white px-4 py-4">
         {Object.keys(points).map((person, i) => (
           <div
+            key={person}
             className={
               "flex flex-row items-center justify-between gap-2 rounded-full px-4 py-2 text-2xl " +
               (i + 1 < 4 ? "border-2 " + placeShadows[i + 1] : "shadow-md")

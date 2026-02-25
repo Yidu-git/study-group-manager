@@ -7,8 +7,8 @@ import { MdFolder, MdTask } from "react-icons/md";
 import { BiChat } from "react-icons/bi";
 
 const Navbar = () => {
-  const iconSize = "full";
-  const iconStyle = "";
+  const iconSize = "";
+  const iconStyle = "w-full h-full";
   const [currentPage, setCurrentPage] = useState("");
 
   const links = [
@@ -41,7 +41,8 @@ const Navbar = () => {
 
   useEffect(() => {
     // console.log(currentPage);
-    setCurrentPage(window.location.pathname.split("/")[1]);
+    setCurrentPage(window.location.href.split("/")[5]);
+    // console.log(window.location.href.split("/")[5]);
   }, []);
 
   return (
@@ -49,6 +50,7 @@ const Navbar = () => {
       {links.map((link) => (
         <Link
           to={link.path}
+          key={link.link}
           onClick={() => setCurrentPage(link.path.split("/")[1])}
         >
           <div
