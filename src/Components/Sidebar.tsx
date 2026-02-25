@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 import { FaSquarePollVertical } from "react-icons/fa6";
-// import { FaFolder } from "react-icons/fa";
 import {
   MdFolder,
   MdNotifications,
@@ -19,7 +18,6 @@ import {
 
 const Sidebar = ({ openState }: { openState: any }) => {
   const [open, setOpen] = openState;
-
   const [currentPage, setCurrentPage] = useState("");
 
   //  border-3 border-gray-400
@@ -68,7 +66,6 @@ const Sidebar = ({ openState }: { openState: any }) => {
     },
   ];
 
-  setCurrentPage(window.location.pathname.split("/")[1]);
   useEffect(() => {
     setCurrentPage(window.location.href.split("/")[5]);
     console.log(window.location.href.split("/")[5]);

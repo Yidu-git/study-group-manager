@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { Outlet } from "react-router-dom";
+
 import Navbar from "../Components/Navbar";
 import Home from "../Pages/Home";
 import NotFound from "../Pages/NotFound";

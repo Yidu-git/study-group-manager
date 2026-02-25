@@ -16,6 +16,7 @@ import Sidebar from "../Components/Sidebar";
 const DesktopLayout = () => {
   //   console.log("D");
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  // const [sidebarOpen, setSidebarOpen] = [false, () => {}];
   return (
     <Routes>
       <Route
@@ -36,8 +37,8 @@ const DesktopLayout = () => {
         <Route path="/chatrooms" element={<ChatRooms />} />
         <Route path="/tasks" element={<TasksPage />} />
         <Route path="/notifications" element={<Notifications />} />
-        <Route path="*" element={<NotFound />} />
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
