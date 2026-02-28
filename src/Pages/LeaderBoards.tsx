@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import FirstPlaceAnim from "../assets/Ranking_icons/First_place_animation.lottie";
-
 // Placement icons
 // import FirstPlace from "../assets/Ranking_icons/First.svg?react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import FirstPlaceAnim from "../assets/Ranking_icons/First_place_animation.lottie";
 import SecondPlace from "../assets/Ranking_icons/Second.svg?react";
 import ThirdPlace from "../assets/Ranking_icons/Third.svg?react";
 
@@ -15,7 +14,7 @@ const LeaderBoards = () => {
     Yididiya: 13,
     Joed: 15,
     Eyo: 21,
-    Noah: 7,
+    Noah: 9,
     Steve: 8,
   });
 
@@ -26,7 +25,7 @@ const LeaderBoards = () => {
   };
 
   const placeShadows: Record<number, string> = {
-    1: "mb-2 py-3! border-[#fbbf24] shadow-[0_10px_5px_0px_#fbbf2435]",
+    1: "mb-2 py-3! md:py-4! border-[#fbbf24] shadow-[0_10px_5px_0px_#fbbf2435] hover:shadow-[0_10px_10px_0px_#fbbf2450]",
     2: "mb-1 border-[#52525b] shadow-[0_10px_5px_0px_#52525b30]",
     3: "border-[#B87333] shadow-[0_10px_5px_0px_#B8733320]",
   };
@@ -69,9 +68,10 @@ const LeaderBoards = () => {
           <div
             key={person}
             className={
-              "flex flex-row items-center justify-between gap-2 rounded-full px-4 py-2 text-2xl " +
+              "flex flex-row items-center justify-between gap-2 rounded-full px-4 py-2 text-2xl transition-shadow duration-150 md:rounded-xl " +
               (i + 1 < 4 ? "border-2 " + placeShadows[i + 1] : "shadow-md")
             }
+            // onMouseEnter={() => lottieRef.current?.play()}
           >
             <div className="flex flex-row items-center gap-1">
               {i + 1 < 4 ? (

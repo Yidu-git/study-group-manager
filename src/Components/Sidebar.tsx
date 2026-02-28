@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaSquarePollVertical } from "react-icons/fa6";
 import {
   MdFolder,
+  MdLeaderboard,
   MdNotifications,
   MdSpaceDashboard,
   MdTask,
@@ -28,6 +29,11 @@ const Sidebar = ({ openState }: { openState: any }) => {
       link: "Dashboard",
       path: "/",
       icon: <MdSpaceDashboard size={iconSize} className={iconStyle} />,
+    },
+    {
+      link: "Leaderboards",
+      path: "/leaderboards",
+      icon: <MdLeaderboard size={iconSize} className={iconStyle} />,
     },
     {
       link: "Polls",
@@ -68,8 +74,7 @@ const Sidebar = ({ openState }: { openState: any }) => {
 
   useEffect(() => {
     setCurrentPage(window.location.href.split("/")[5]);
-    console.log(window.location.href.split("/")[5]);
-    // console.log(currentPage);
+    console.log(window.location.href.split("/")[5] + "");
   }, []);
 
   return (

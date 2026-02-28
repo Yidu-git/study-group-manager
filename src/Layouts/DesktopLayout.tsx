@@ -10,6 +10,7 @@ import ChatRooms from "../Pages/ChatRooms";
 import Notifications from "../Pages/Notifications";
 import NotFound from "../Pages/NotFound";
 import TasksPage from "../Pages/Tasks";
+import LeaderBoards from "../Pages/LeaderBoards";
 
 import Sidebar from "../Components/Sidebar";
 
@@ -34,6 +35,7 @@ const DesktopLayout = () => {
         <Route path="/" element={<Dashboard />} />
         <Route path="/polls" element={<Polls />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/leaderboards" element={<LeaderBoards />} />
         <Route path="/chatrooms" element={<ChatRooms />} />
         <Route path="/tasks" element={<TasksPage />} />
         <Route path="/notifications" element={<Notifications />} />

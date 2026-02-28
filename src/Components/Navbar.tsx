@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { FaSquarePollVertical } from "react-icons/fa6";
+// import { FaSquarePollVertical } from "react-icons/fa6";
 import { RiHomeFill } from "react-icons/ri";
-import { MdFolder, MdTask } from "react-icons/md";
+import { MdFolder, MdLeaderboard, MdTask } from "react-icons/md";
 import { BiChat } from "react-icons/bi";
 
 const Navbar = () => {
@@ -20,7 +20,7 @@ const Navbar = () => {
     {
       link: "Leaderboard",
       path: "/leaderboards",
-      icon: <FaSquarePollVertical size={iconSize} className={iconStyle} />,
+      icon: <MdLeaderboard size={iconSize} className={iconStyle} />,
     },
     {
       link: "Chat",
@@ -40,7 +40,6 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
-    // console.log(currentPage);
     setCurrentPage(window.location.href.split("/")[5]);
     // console.log(window.location.href.split("/")[5]);
   }, []);
