@@ -12,10 +12,11 @@ const LeaderBoards = () => {
 
   const [points, setPoints] = useState<Record<string, number>>({
     Yididiya: 13,
-    Joed: 15,
-    Eyo: 21,
+    Joed: 17,
+    Eyo: 22,
     Noah: 9,
-    Steve: 8,
+    Steve: 9,
+    Thomas: 6,
   });
 
   const placeStyles: Record<number, string> = {
