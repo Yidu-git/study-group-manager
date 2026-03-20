@@ -1,21 +1,19 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-import { FaSquarePollVertical } from "react-icons/fa6";
 import {
-  MdFolder,
-  MdLeaderboard,
-  MdNotifications,
-  MdSpaceDashboard,
-  MdTask,
-} from "react-icons/md";
-import { BiChat } from "react-icons/bi";
-import { useEffect, useState } from "react";
-import { HiUsers } from "react-icons/hi";
-import {
-  PiGearSixFill,
-  PiSidebarSimple,
-  PiSidebarSimpleFill,
-} from "react-icons/pi";
+  Bell,
+  Folder,
+  Kanban,
+  LayoutDashboard,
+  Logs,
+  MessageSquare,
+  Notebook,
+  PanelLeft,
+  PanelLeftClose,
+  Settings,
+  Vote,
+} from "lucide-react";
 
 const Sidebar = ({ openState }: { openState: any }) => {
   const [open, setOpen] = openState;
@@ -28,47 +26,47 @@ const Sidebar = ({ openState }: { openState: any }) => {
     {
       link: "Dashboard",
       path: "/",
-      icon: <MdSpaceDashboard size={iconSize} className={iconStyle} />,
+      icon: <LayoutDashboard size={iconSize} className={iconStyle} />,
     },
     {
       link: "Leaderboards",
       path: "/leaderboards",
-      icon: <MdLeaderboard size={iconSize} className={iconStyle} />,
+      icon: <Kanban size={iconSize} className={iconStyle} />,
     },
     {
       link: "Polls",
       path: "/polls",
-      icon: <FaSquarePollVertical size={iconSize} className={iconStyle} />,
+      icon: <Vote size={iconSize} className={iconStyle} />,
     },
     {
       link: "Projects",
       path: "/projects",
-      icon: <MdFolder size={iconSize} className={iconStyle} />,
+      icon: <Folder size={iconSize} className={iconStyle} />,
     },
     {
       link: "Notifications",
       path: "/notifications",
-      icon: <MdNotifications size={iconSize} className={iconStyle} />,
+      icon: <Bell size={iconSize} className={iconStyle} />,
     },
     {
       link: "Chat rooms",
       path: "/chatrooms",
-      icon: <BiChat size={iconSize} className={iconStyle} />,
+      icon: <MessageSquare size={iconSize} className={iconStyle} />,
     },
     {
       link: "Tasks",
       path: "/tasks",
-      icon: <MdTask size={iconSize} className={iconStyle} />,
+      icon: <Logs size={iconSize} className={iconStyle} />,
     },
-    {
-      link: "Members",
-      path: "/members",
-      icon: <HiUsers size={iconSize} className={iconStyle} />,
-    },
+    // {
+    //   link: "Members",
+    //   path: "/members",
+    //   icon: <HiUsers size={iconSize} className={iconStyle} />,
+    // },
     {
       link: "Notes",
       path: "/notes",
-      icon: <MdFolder size={iconSize} className={iconStyle} />,
+      icon: <Notebook size={iconSize} className={iconStyle} />,
     },
   ];
 
@@ -87,9 +85,9 @@ const Sidebar = ({ openState }: { openState: any }) => {
           onClick={() => setOpen((prev: any) => !prev)}
         >
           {open ? (
-            <PiSidebarSimpleFill size={"2.5rem"} className="" />
+            <PanelLeftClose size={"2.5rem"} className="" />
           ) : (
-            <PiSidebarSimple size={"2.5rem"} className="text-gray-600" />
+            <PanelLeft size={"2.5rem"} className="text-gray-600" />
           )}
         </h1>
         <div>
@@ -107,7 +105,7 @@ const Sidebar = ({ openState }: { openState: any }) => {
         </div>
       </div>
       <button className="ml-2 h-10 w-full cursor-pointer items-center justify-center">
-        <PiGearSixFill
+        <Settings
           size={"2.5rem"}
           className="h-fit w-fit text-neutral-700 hover:text-blue-500"
         />

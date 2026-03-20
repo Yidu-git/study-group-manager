@@ -15,7 +15,7 @@ const LeaderBoards = () => {
     Joed: 24,
     Eyo: 25,
     Noah: 26,
-    Steve: 26,
+    Steve: 27,
     Thomas: 22,
   });
 

@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 // import { FaSquarePollVertical } from "react-icons/fa6";
-import { RiHomeFill } from "react-icons/ri";
-import { MdFolder, MdLeaderboard, MdTask } from "react-icons/md";
-import { BiChat } from "react-icons/bi";
+import { Folder, House, Kanban, Logs, MessagesSquare } from "lucide-react";
 
 const Navbar = () => {
   const iconSize = "";
@@ -15,27 +13,27 @@ const Navbar = () => {
     {
       link: "Home",
       path: "/",
-      icon: <RiHomeFill size={iconSize} className={iconStyle} />,
+      icon: <House size={iconSize} className={iconStyle} />,
     },
     {
       link: "Leaderboard",
       path: "/leaderboards",
-      icon: <MdLeaderboard size={iconSize} className={iconStyle} />,
+      icon: <Kanban size={iconSize} className={"rotate-180 " + iconStyle} />,
     },
     {
       link: "Chat",
       path: "/chatrooms",
-      icon: <BiChat size={iconSize} className={iconStyle} />,
+      icon: <MessagesSquare size={iconSize} className={iconStyle} />,
     },
     {
       link: "Tasks",
       path: "/tasks",
-      icon: <MdTask size={iconSize} className={iconStyle} />,
+      icon: <Logs size={iconSize} className={iconStyle} />,
     },
     {
       link: "Projects",
       path: "/projects",
-      icon: <MdFolder size={iconSize} className={iconStyle} />,
+      icon: <Folder size={iconSize} className={iconStyle} />,
     },
   ];
 
