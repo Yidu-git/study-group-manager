@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import api from "../API/axios";
 
 // Placement icons
 // import FirstPlace from "../assets/Ranking_icons/First.svg?react";
@@ -9,16 +10,15 @@ import ThirdPlace from "../assets/Ranking_icons/Third.svg?react";
 
 const LeaderBoards = () => {
   const lottieRef = useRef<any>(null);
-
-  const [points, setPoints] = useState<Record<string, number>>({
-    test: 50,
-    // Yididiya: 26,
-    // Joed: 24,
-    // Eyo: 25,
-    // Noah: 26,
-    // Steve: 27,
-    // Thomas: 22,
-  });
+  const [points, setPoints] = useState<[string, number][]>([
+    ["test", 50],
+    // ["Yididiya", 26],
+    // ["Joed", 24],
+    // ["Eyo", 25],
+    // ["Noah", 26],
+    // ["Steve", 27],
+    // ["Thomas", 22],
+  ]);
 
   const placeStyles: Record<number, string> = {
     1: "bg-[#fbbf24]! text-white",
@@ -54,9 +54,26 @@ const LeaderBoards = () => {
   };
 
   useEffect(() => {
-    setPoints((prev) =>
-      Object.fromEntries(Object.entries(prev).sort((a, b) => b[1] - a[1])),
-    );
+    const fetchData = async () => {
+      try {
+        const res = (await api.get("/leaderboard")).data;
+        setPoints(res);
+        console.log("Fetching data...");
+        console.log(res);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    // setPoints((prev) =>
+    //   Object.fromEntries(Object.entries(prev).sort((a, b) => b[1] - a[1])),
+    // );
+    setPoints((prev) => prev.sort((a, b) => b[1] - a[1]));
+    console.log(points);
     // console.log(points["key" as keyof typeof points]);
   }, []);
   return (
@@ -65,12 +82,12 @@ const LeaderBoards = () => {
       <div className="sticky flex h-fit w-full flex-row items-center justify-between bg-white px-5 py-3 text-black shadow-[00px_10px_10px_0_#00000012]">
         <h1 className="text-3xl">Leaderboard</h1>
       </div>
-      <div className="flex h-full w-full flex-col gap-2 overflow-x-auto bg-white px-4 py-4">
-        {Object.keys(points).map((person, i) => (
+      <div className="flex h-full w-full flex-col gap-2 overflow-x-auto bg-white px-4 py-4 md:px-30">
+        {points.map((point, i) => (
           <div
-            key={person}
+            key={point[0]}
             className={
-              "flex flex-row items-center justify-between gap-2 rounded-full px-4 py-2 text-2xl transition-shadow duration-150 md:rounded-xl " +
+              "flex flex-row items-center justify-between gap-2 rounded-xl px-4 py-2 text-2xl transition-shadow duration-150 md:rounded-xl " +
               (i + 1 < 4 ? "border-2 " + placeShadows[i + 1] : "shadow-md")
             }
             // onMouseEnter={() => lottieRef.current?.play()}
@@ -87,7 +104,7 @@ const LeaderBoards = () => {
                   (i + 1 < 4 ? placeStyles[i + 1] : "bg-gray-100")
                 }
               >
-                {person}
+                {point[0]}
               </h1>
             </div>
             <h1
@@ -96,7 +113,7 @@ const LeaderBoards = () => {
                 (i + 1 < 4 ? placeStyles[i + 1] : "border border-neutral-400")
               }
             >
-              {points[person]}
+              {point[1]}
             </h1>
           </div>
         ))}
