@@ -20,7 +20,7 @@ const Sidebar = ({ openState }: { openState: any }) => {
   const [currentPage, setCurrentPage] = useState("");
 
   //  border-3 border-gray-400
-  const iconSize = "full";
+  const iconSize = "2.5rem";
   const iconStyle = "";
   const links = [
     {

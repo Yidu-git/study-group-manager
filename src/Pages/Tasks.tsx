@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CiSearch } from "react-icons/ci";
+import { Search } from "lucide-react";
 
 interface Task {
   id: string;
@@ -137,7 +137,7 @@ const TasksPage = () => {
     <div className="bg-gray-100s flex h-full w-full flex-col">
       <div className="sticky z-10 flex h-fit w-full flex-row items-center justify-between bg-white px-5 py-3 text-black shadow-[00px_10px_10px_0_#00000012]">
         <h1 className="text-3xl">Tasks</h1>
-        <div className="flex h-10 w-fit flex-row items-center justify-center rounded-full border-3 border-neutral-400 bg-white p-4 text-lg">
+        <div className="flex h-10 w-fit flex-row items-center justify-center rounded-md border border-neutral-800 bg-white p-4 text-lg">
           <input
             type="text"
             id="search"
@@ -145,7 +145,7 @@ const TasksPage = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
             className={`z-100 h-10 w-10 transition-[width] duration-300 focus:outline-0 ${searchTerm.length !== 0 ? "w-30 md:w-100" : "focus:w-30 md:focus:w-100"}`}
           />
-          <CiSearch
+          <Search
             size={"2rem"}
             className="z-0 -ml-1 text-neutral-400"
             strokeWidth={1}
